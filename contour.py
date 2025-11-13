@@ -22,7 +22,7 @@ def latlon_to_utm_feet(lat_arr, lon_arr):
     return x_m * _M2FT, y_m * _M2FT
 
 def contour_array(
-    val_col="Total_cons_kwh",
+    val_col="Median_cons_kwh",   # you can change statistic target, 'Total_cons_kwh','Mean_cons_kwh', 'Median_cons_kwh'
     grid_ft=3000.0,            
     pad_cells=1,
     agg="median",              
@@ -162,7 +162,7 @@ plt.xlabel("Easting (ft)")
 plt.ylabel("Northing (ft)")
 
 # 4. 保存图片 (Codespace 必须这一步)
-output_filename = "contour_map_result.png"
+output_filename = "contour_map_result_Median_cons_kwh.png"
 plt.savefig(output_filename, dpi=150)
 print(f"✅ 图片已保存为: {output_filename}")
 print("请在左侧文件浏览器中点击该图片查看结果。")
